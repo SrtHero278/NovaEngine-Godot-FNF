@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://4m4a4xiq5ofo"]
+
+[ext_resource type="Script" path="res://assets/songs/singularity/script.gd" id="1_vb12s"]
+[ext_resource type="Script" path="res://classes/AnimatedSprite.gd" id="2_c32ih"]
+[ext_resource type="SpriteFrames" uid="uid://b7fvagygf2yhe" path="res://assets/images/gameplay/space/specialAnim.res" id="2_cf4o0"]
+
+[sub_resource type="Animation" id="Animation_ni6wu"]
+resource_name = "defeat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Defeat"]
+}
+
+[sub_resource type="Animation" id="Animation_2qf2a"]
+resource_name = "s    u    c    c"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Succ"]
+}
+
+[sub_resource type="Animation" id="Animation_8lgyg"]
+resource_name = "scream"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Scream"]
+}
+
+[sub_resource type="Animation" id="Animation_bd5qw"]
+resource_name = "stunned"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Stunned"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_voolx"]
+_data = {
+"defeat": SubResource("Animation_ni6wu"),
+"s    u    c    c": SubResource("Animation_2qf2a"),
+"scream": SubResource("Animation_8lgyg"),
+"stunned": SubResource("Animation_bd5qw")
+}
+
+[node name="script" type="Node"]
+script = ExtResource("1_vb12s")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_cf4o0")
+animation = &"Succ"
+centered = false
+script = ExtResource("2_c32ih")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_voolx")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -820.0
+offset_top = -680.0
+offset_right = 1740.0
+offset_bottom = 760.0

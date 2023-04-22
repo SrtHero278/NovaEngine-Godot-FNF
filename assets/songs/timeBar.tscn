@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kk6t78scsg4f"]
+
+[ext_resource type="Script" path="res://assets/songs/timeBar.gd" id="1_bujpi"]
+
+[node name="healthBar" type="Node"]
+script = ExtResource("1_bujpi")

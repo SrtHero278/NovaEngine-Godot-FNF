@@ -5,4 +5,6 @@
 
 [node name="config" type="Node"]
 script = ExtResource("1_ohtiw")
+title = "Void Port"
+description = "its actually just singularity"
 contributors = ExtResource("2_oa0ki")

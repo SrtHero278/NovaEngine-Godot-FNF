@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://cb6qulp5qaae8"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/stages/oblivion.gd" id="1_nthtv"]
+[ext_resource type="Texture2D" uid="uid://ddwf306avy85b" path="res://assets/images/gameplay/stages/oblivion/tintedSpaceBG.png" id="2_t5hfn"]
+[ext_resource type="Texture2D" uid="uid://cqgaqxy52g266" path="res://assets/images/gameplay/stages/oblivion/oblivionDark1.png" id="3_2ahj0"]
+[ext_resource type="Texture2D" uid="uid://ci0ddr5udu424" path="res://assets/images/gameplay/stages/oblivion/oblivionDark2.png" id="4_3rcao"]
+[ext_resource type="Texture2D" uid="uid://ckiuoestc6ui5" path="res://assets/images/gameplay/stages/oblivion/oblivionDark3.png" id="5_gj13q"]
+[ext_resource type="Texture2D" uid="uid://dalf8t8316c45" path="res://assets/images/gameplay/stages/oblivion/holoBroken.png" id="6_ss3ol"]
+[ext_resource type="SpriteFrames" path="res://assets/images/gameplay/stages/oblivion/bgGlitch.res" id="7_r5hxr"]
+[ext_resource type="Script" path="res://classes/AnimatedSprite.gd" id="8_o8sko"]
+[ext_resource type="SpriteFrames" uid="uid://0p4c1e6cmbt1" path="res://assets/images/gameplay/stages/oblivion/neoBop.res" id="9_1yyk0"]
+[ext_resource type="SpriteFrames" path="res://assets/images/gameplay/stages/oblivion/spacestage.res" id="10_os1y3"]
+[ext_resource type="Texture2D" uid="uid://buhpgn3kt6kuy" path="res://assets/images/gameplay/stages/oblivion/camTint.png" id="11_lam8y"]
+
+[node name="stage" type="Node2D"]
+script = ExtResource("1_nthtv")
+default_cam_zoom = 0.7
+
+[node name="PB" type="ParallaxBackground" parent="."]
+
+[node name="Tenth" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="TintedSpace" type="Sprite2D" parent="PB/Tenth"]
+position = Vector2(-500, -220)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_t5hfn")
+centered = false
+
+[node name="Obliv1" type="Sprite2D" parent="PB/Tenth"]
+position = Vector2(-720, -240)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_2ahj0")
+centered = false
+
+[node name="Point22" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.22, 0.22)
+
+[node name="Obliv2" type="Sprite2D" parent="PB/Point22"]
+position = Vector2(-720, -240)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_3rcao")
+centered = false
+
+[node name="Point35" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.35, 0.35)
+
+[node name="Obliv3" type="Sprite2D" parent="PB/Point35"]
+position = Vector2(-720, -240)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_gj13q")
+centered = false
+
+[node name="Point45" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.45, 0.45)
+
+[node name="Holo" type="Sprite2D" parent="PB/Point45"]
+position = Vector2(-900, 200)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_ss3ol")
+
+[node name="Point3" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="BGGlitch" type="AnimatedSprite2D" parent="PB/Point3"]
+position = Vector2(-820, -680)
+scale = Vector2(1.1, 1.1)
+sprite_frames = ExtResource("7_r5hxr")
+animation = &"Glitch FX"
+frame_progress = 0.0288111
+centered = false
+script = ExtResource("8_o8sko")
+
+[node name="Half" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="NeoBop" type="AnimatedSprite2D" parent="PB/Half"]
+position = Vector2(-540, -240)
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("9_1yyk0")
+animation = &"Neo Boppin"
+frame = 13
+frame_progress = 1.0
+centered = false
+script = ExtResource("8_o8sko")
+
+[node name="One" type="ParallaxLayer" parent="PB"]
+
+[node name="SpaceStage" type="AnimatedSprite2D" parent="PB/One"]
+position = Vector2(-500, -330)
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("10_os1y3")
+animation = &"Stage Bop"
+centered = false
+script = ExtResource("8_o8sko")
+
+[node name="Zero" type="ParallaxLayer" parent="PB"]
+motion_scale = Vector2(0, 0)
+
+[node name="CamTint" type="Sprite2D" parent="PB/Zero"]
+position = Vector2(640, 360)
+scale = Vector2(1.44, 1.44)
+texture = ExtResource("11_lam8y")
+
+[node name="Character Positions" type="Node2D" parent="."]
+
+[node name="Opponent" type="Node2D" parent="Character Positions"]
+position = Vector2(-410, 80)
+
+[node name="Spectator" type="Node2D" parent="Character Positions"]
+position = Vector2(400, 130)
+
+[node name="Player" type="Node2D" parent="Character Positions"]
+position = Vector2(770, 100)
