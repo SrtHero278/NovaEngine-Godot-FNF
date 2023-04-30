@@ -138,6 +138,11 @@ func _ready() -> void:
 			n.type = note.type
 			n.alt_anim = note.alt_anim
 			n.player_section = section.is_player
+			
+			var note_type_path:String = "res://scenes/gameplay/notes/"+note.type+".tscn"
+			if not note.type in template_notes and ResourceLoader.exists(note_type_path):
+				template_notes[note.type] = load(note_type_path).instantiate()
+			
 			note_data_array.append(n)
 			
 	note_data_array.sort_custom(func(a, b): return a.time < b.time)
@@ -253,6 +258,7 @@ func _ready() -> void:
 	
 	stage.callv("_ready_post", [])
 	script_group.call_func("_ready_post", [])
+	print(template_notes)
 	
 func start_cutscene(postfix:String = "-start"):
 	var cutscene_path = "res://scenes/gameplay/cutscenes/" + SONG.name.to_lower() + postfix + ".tscn"
@@ -379,6 +385,8 @@ func step_hit(step:int):
 	script_group.call_func("on_step_hit_post", [step])
 
 func section_hit(section:int):
+	if not range(SONG.sections.size()).has(section): return
+	
 	script_group.call_func("on_section_hit", [section])
 
 	if cam_switching:
@@ -594,7 +602,12 @@ func good_note_hit(note:Note):
 		receptor.splash.visible = true
 		script_group.call_func("on_spawn_note_splash", [receptor.splash])
 	
-	pop_up_score(judgement)	
+	if note.should_hit:
+		pop_up_score(judgement)	
+	else:
+		combo = 0
+		accuracy_pressed_notes += 1
+		
 	update_score_text()
 	
 	note.was_good_hit = true
@@ -605,7 +618,7 @@ func good_note_hit(note:Note):
 	player.play_anim(sing_anim, true)
 	player.hold_timer = 0.0
 	
-	health += 0.023
+	health += 0.023*note.health_gain_mult
 	
 	if note.length <= 0:
 		note._player_hit()
@@ -695,6 +708,7 @@ func _process(delta:float) -> void:
 			
 		var instance_type:String = note.type
 		if not note.type in template_notes:
+			print("type not found " + instance_type)
 			instance_type = "default"
 			
 		var new_note:Note = template_notes[instance_type].duplicate()
