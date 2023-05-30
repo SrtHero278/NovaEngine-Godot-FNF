@@ -1,0 +1,3 @@
+im bad with remotes
+
+so im making this commit to make sure im not commiting into main.
