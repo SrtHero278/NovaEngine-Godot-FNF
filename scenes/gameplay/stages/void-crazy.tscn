@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhjpw1svsy8gu"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/stages/void-crazy.gd" id="1_6rlr8"]
+[ext_resource type="SpriteFrames" path="res://assets/images/gameplay/stages/void/The_void.res" id="2_ar44j"]
+[ext_resource type="SpriteFrames" uid="uid://n7c4ffwr4rvs" path="res://assets/images/gameplay/stages/AAAAAAAAAAAAAAAAAAAAAAAAA/LoudSpeaker_Moving.res" id="2_p7cxt"]
+[ext_resource type="SpriteFrames" path="res://assets/images/gameplay/stages/AAAAAAAAAAAAAAAAAAAAAAAAA/Pillar_BG_Stage.res" id="2_x15md"]
+[ext_resource type="Script" path="res://classes/AnimatedSprite.gd" id="3_rv4xx"]
+[ext_resource type="SpriteFrames" uid="uid://beap10u1q82mt" path="res://assets/images/gameplay/characters/gf/rock.res" id="5_rvet5"]
+[ext_resource type="SpriteFrames" path="res://assets/images/gameplay/stages/AAAAAAAAAAAAAAAAAAAAAAAAA/Pillar_1.res" id="7_7t1sr"]
+
+[node name="void-crazy" type="Node2D"]
+script = ExtResource("1_6rlr8")
+default_cam_zoom = 0.45
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Back1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Back1"]
+offset_left = -1338.0
+offset_top = -1302.0
+offset_right = 4063.0
+offset_bottom = 2293.0
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="ParallaxBackground/Back1"]
+position = Vector2(-1333, -1209)
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("2_ar44j")
+animation = &"VoidShift"
+frame_progress = 0.363526
+centered = false
+script = ExtResource("3_rv4xx")
+
+[node name="0-75" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="ParallaxBackground/0-75"]
+position = Vector2(1379, 402)
+scale = Vector2(1.3, 1.3)
+sprite_frames = ExtResource("2_x15md")
+animation = &"Pillar_BG_Stage"
+frame_progress = 0.440887
+script = ExtResource("3_rv4xx")
+
+[node name="0-85" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.85, 0.85)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="ParallaxBackground/0-85"]
+position = Vector2(700, -400)
+sprite_frames = ExtResource("5_rvet5")
+animation = &"GF Dancing Beat Hair blowing"
+frame_progress = 0.381063
+centered = false
+script = ExtResource("3_rv4xx")
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="ParallaxBackground/1"]
+position = Vector2(-400, 560)
+scale = Vector2(1.3, 1.3)
+sprite_frames = ExtResource("2_p7cxt")
+animation = &"StereoMoving"
+frame_progress = 0.864828
+centered = false
+script = ExtResource("3_rv4xx")
+
+[node name="AnimatedSprite2" type="AnimatedSprite2D" parent="ParallaxBackground/1"]
+position = Vector2(-777, -762)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_7t1sr")
+animation = &"Pillar"
+centered = false
+script = ExtResource("3_rv4xx")
+
+[node name="AnimatedSprite3" type="AnimatedSprite2D" parent="ParallaxBackground/1"]
+position = Vector2(2666, -863)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_7t1sr")
+animation = &"Pillar"
+centered = false
+script = ExtResource("3_rv4xx")
+
+[node name="Character Positions" type="Node2D" parent="."]
+
+[node name="Opponent" type="Node2D" parent="Character Positions"]
+position = Vector2(662, 895)
+
+[node name="Spectator" type="Node2D" parent="Character Positions"]
+position = Vector2(4300, 2537)
+
+[node name="Player" type="Node2D" parent="Character Positions"]
+position = Vector2(2052, 894)

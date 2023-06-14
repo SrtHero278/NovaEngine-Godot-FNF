@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://duhqsh5l5bbtm"]
+[gd_scene load_steps=13 format=3 uid="uid://duhqsh5l5bbtm"]
 
 [ext_resource type="Script" path="res://scenes/TitleScreen.gd" id="1_eg0nr"]
 [ext_resource type="Material" uid="uid://dlwbyy60pp0e2" path="res://assets/shaders/TitleScreenShaderMaterial.tres" id="2_f6nud"]
@@ -7,7 +7,6 @@
 [ext_resource type="SpriteFrames" path="res://assets/images/titlescreen/logoBumpin.res" id="4_dmwg3"]
 [ext_resource type="SpriteFrames" uid="uid://6vecp03qpxmj" path="res://assets/images/titlescreen/titleEnter.res" id="5_0ol1a"]
 [ext_resource type="PackedScene" uid="uid://bgilym2qsrs4y" path="res://scenes/fonts/Alphabet.tscn" id="6_8oxyx"]
-[ext_resource type="Texture2D" uid="uid://db74xyr3ob48e" path="res://assets/images/titlescreen/newgrounds_logo.png" id="7_6kcht"]
 
 [sub_resource type="Animation" id="Animation_ldyfc"]
 resource_name = "danceLeft"
@@ -121,6 +120,13 @@ _data = {
 "danceRight": SubResource("Animation_mht0r")
 }
 
+[sub_resource type="Gradient" id="Gradient_d585m"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j0baa"]
+gradient = SubResource("Gradient_d585m")
+width = 1280
+height = 720
+
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_eg0nr")
 
@@ -166,10 +172,8 @@ offset_bottom = 270.0
 [node name="TextGroup" type="Node2D" parent="."]
 
 [node name="NgSpr" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 526.4)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("7_6kcht")
+position = Vector2(640, 360)
+texture = SubResource("GradientTexture2D_j0baa")
 
 [node name="Flash" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

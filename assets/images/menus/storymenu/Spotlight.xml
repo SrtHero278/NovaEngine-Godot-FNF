@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spotlight.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Spotlight0000" x="0" y="0" width="888" height="844" frameX="-66" frameY="0" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0001" x="888" y="0" width="888" height="844" frameX="-66" frameY="0" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0002" x="1776" y="0" width="888" height="843" frameX="-66" frameY="-1" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0003" x="2664" y="0" width="889" height="841" frameX="-65" frameY="-3" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0004" x="3553" y="0" width="891" height="838" frameX="-63" frameY="-6" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0005" x="4444" y="0" width="892" height="835" frameX="-62" frameY="-9" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0006" x="5336" y="0" width="894" height="831" frameX="-60" frameY="-13" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0007" x="6230" y="0" width="897" height="826" frameX="-57" frameY="-18" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0008" x="7127" y="0" width="899" height="820" frameX="-55" frameY="-24" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0009" x="0" y="844" width="902" height="813" frameX="-52" frameY="-31" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0010" x="902" y="844" width="905" height="805" frameX="-49" frameY="-39" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0011" x="1807" y="844" width="908" height="797" frameX="-46" frameY="-47" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0012" x="2715" y="844" width="911" height="787" frameX="-43" frameY="-57" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0013" x="3626" y="844" width="914" height="776" frameX="-40" frameY="-68" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0014" x="4540" y="844" width="918" height="764" frameX="-36" frameY="-80" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0015" x="5458" y="844" width="921" height="751" frameX="-33" frameY="-93" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0016" x="6379" y="844" width="925" height="738" frameX="-29" frameY="-106" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0017" x="0" y="1657" width="928" height="727" frameX="-26" frameY="-118" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0018" x="928" y="1657" width="932" height="722" frameX="-22" frameY="-129" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0019" x="1860" y="1657" width="935" height="718" frameX="-19" frameY="-139" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0020" x="2795" y="1657" width="939" height="713" frameX="-15" frameY="-149" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0021" x="3734" y="1657" width="942" height="709" frameX="-12" frameY="-158" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0022" x="4676" y="1657" width="944" height="706" frameX="-10" frameY="-165" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0023" x="5620" y="1657" width="947" height="702" frameX="-7" frameY="-172" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0024" x="6567" y="1657" width="949" height="699" frameX="-5" frameY="-178" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0025" x="0" y="2384" width="951" height="696" frameX="-3" frameY="-183" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0026" x="951" y="2384" width="952" height="694" frameX="-2" frameY="-187" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0027" x="1903" y="2384" width="953" height="693" frameX="-1" frameY="-189" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0028" x="2856" y="2384" width="954" height="692" frameX="0" frameY="-191" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0029" x="3810" y="2384" width="954" height="692" frameX="0" frameY="-191" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0030" x="4764" y="2384" width="954" height="692" frameX="0" frameY="-191" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0031" x="5718" y="2384" width="953" height="692" frameX="-1" frameY="-190" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0032" x="6671" y="2384" width="952" height="694" frameX="-2" frameY="-187" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0033" x="0" y="3080" width="951" height="697" frameX="-3" frameY="-183" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0034" x="951" y="3080" width="949" height="698" frameX="-5" frameY="-179" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0035" x="1900" y="3080" width="947" height="701" frameX="-7" frameY="-174" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0036" x="2847" y="3080" width="945" height="705" frameX="-9" frameY="-167" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0037" x="3792" y="3080" width="942" height="708" frameX="-12" frameY="-160" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0038" x="4734" y="3080" width="940" height="712" frameX="-14" frameY="-152" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0039" x="5674" y="3080" width="936" height="717" frameX="-18" frameY="-142" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0040" x="6610" y="3080" width="933" height="721" frameX="-21" frameY="-133" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0041" x="0" y="3801" width="930" height="726" frameX="-24" frameY="-122" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0042" x="930" y="3801" width="926" height="733" frameX="-28" frameY="-111" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0043" x="1856" y="3801" width="923" height="745" frameX="-31" frameY="-99" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0044" x="2779" y="3801" width="919" height="758" frameX="-35" frameY="-86" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0045" x="3698" y="3801" width="916" height="770" frameX="-38" frameY="-74" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0046" x="4614" y="3801" width="913" height="781" frameX="-41" frameY="-63" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0047" x="5527" y="3801" width="910" height="791" frameX="-44" frameY="-53" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0048" x="6437" y="3801" width="907" height="800" frameX="-47" frameY="-44" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0049" x="0" y="4601" width="904" height="808" frameX="-50" frameY="-36" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0050" x="904" y="4601" width="901" height="815" frameX="-53" frameY="-29" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0051" x="1805" y="4601" width="899" height="821" frameX="-55" frameY="-23" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0052" x="2704" y="4601" width="896" height="827" frameX="-58" frameY="-17" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0053" x="3600" y="4601" width="894" height="831" frameX="-60" frameY="-13" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0054" x="4494" y="4601" width="892" height="835" frameX="-62" frameY="-9" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0055" x="5386" y="4601" width="891" height="839" frameX="-63" frameY="-5" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0056" x="6277" y="4601" width="889" height="841" frameX="-65" frameY="-3" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0057" x="7166" y="4601" width="888" height="843" frameX="-66" frameY="-1" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0058" x="0" y="5444" width="888" height="844" frameX="-66" frameY="0" frameWidth="954" frameHeight="883"/>
+	<SubTexture name="Spotlight0059" x="0" y="0" width="888" height="844" frameX="-66" frameY="0" frameWidth="954" frameHeight="883"/>
+</TextureAtlas>

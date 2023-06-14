@@ -17,7 +17,7 @@ var cur_time:float = Conductor.position
 var hold_time:float = 0.0
 
 @onready var game:Gameplay = $"../"
-@onready var text_template:FreeplayAlphabet = $__TemplateItem__
+@onready var text_template:Alphabet = $__TemplateItem__
 
 @onready var bg:ColorRect = $BG
 @onready var menu_items:Node2D = $MenuItems
@@ -40,13 +40,12 @@ func _ready() -> void:
 	for i in options.size():
 		var option:String = options[i]
 		
-		var new_item:FreeplayAlphabet = text_template.duplicate()
+		var new_item:Alphabet = text_template.duplicate()
 		new_item.position = Vector2(0, (70 * i) + 30)
 		new_item.text = option
 		new_item.is_menu_item = true
 		new_item.target_y = i
 		new_item.visible = true
-		new_item.is_template = false
 		menu_items.add_child(new_item)
 		
 		if option == "Skip Time":
@@ -86,7 +85,7 @@ func change_selection(change:int = 0):
 	cur_selected = wrapi(cur_selected + change, 0, options.size())
 	
 	for i in menu_items.get_child_count():
-		var item:FreeplayAlphabet = menu_items.get_child(i)
+		var item:Alphabet = menu_items.get_child(i)
 		item.target_y = i - cur_selected
 		item.modulate.a = 1.0 if cur_selected == i else 0.6
 		

@@ -1,34 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://q64jd3rbs8je"]
+[gd_scene load_steps=11 format=3 uid="uid://q64jd3rbs8je"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_f3mce"]
 [ext_resource type="Texture2D" uid="uid://8cpkvnc78sok" path="res://assets/images/menus/menuBG.png" id="2_25v5u"]
-[ext_resource type="Texture2D" uid="uid://y8c4a1bk8wkl" path="res://assets/images/menus/menuBGDesat.png" id="3_sklie"]
-[ext_resource type="SpriteFrames" path="res://assets/images/menus/mainmenu/story mode.res" id="4_vrrvm"]
-[ext_resource type="SpriteFrames" path="res://assets/images/menus/mainmenu/freeplay.res" id="5_q251e"]
-[ext_resource type="SpriteFrames" path="res://assets/images/menus/mainmenu/options.res" id="6_jtmjb"]
-[ext_resource type="FontFile" uid="uid://coqcg7h14duny" path="res://assets/fonts/vcr.ttf" id="7_fi2y3"]
+[ext_resource type="Texture2D" uid="uid://bp6vjrko5h15c" path="res://assets/images/menus/checker.png" id="3_0fcn1"]
+[ext_resource type="Texture2D" uid="uid://bok3v6ugegwr2" path="res://assets/images/menus/mainmenu/Main_Side.png" id="4_r6ooo"]
+[ext_resource type="SpriteFrames" path="res://assets/images/menus/mainmenu/FNF_main_menu_assets.res" id="5_q5t4q"]
 
-[sub_resource type="Animation" id="Animation_vsdk4"]
-resource_name = "flash"
-length = 1.1
-step = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false, true, false]
-}
+[sub_resource type="Gradient" id="Gradient_uhux3"]
+offsets = PackedFloat32Array(0, 0.49505, 1)
+colors = PackedColorArray(1, 0, 0, 0, 0.682353, 0.34902, 0.894118, 0.333333, 0.0980392, 0.92549, 1, 0.666667)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o84so"]
-_data = {
-"flash": SubResource("Animation_vsdk4")
-}
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_056xk"]
+gradient = SubResource("Gradient_uhux3")
+width = 512
 
 [sub_resource type="Animation" id="Animation_j6yp2"]
 length = 0.001
@@ -70,73 +54,63 @@ _data = {
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_f3mce")
 
-[node name="PB" type="ParallaxBackground" parent="."]
-
-[node name="BGLayer" type="ParallaxLayer" parent="PB"]
-motion_scale = Vector2(0, 0.17)
-
-[node name="MenuBG" type="Sprite2D" parent="PB/BGLayer"]
+[node name="MenuBG" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-scale = Vector2(1.2, 1.2)
+rotation = 3.12414
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_25v5u")
 
-[node name="MenuBG2" type="Sprite2D" parent="PB/BGLayer"]
-position = Vector2(640, 360)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_25v5u")
+[node name="Gradient" type="Sprite2D" parent="."]
+position = Vector2(640, 464)
+rotation = 1.5708
+scale = Vector2(1, 1280)
+texture = SubResource("GradientTexture1D_056xk")
 
-[node name="Magenta" type="Sprite2D" parent="PB/BGLayer"]
-visible = false
-modulate = Color(0.992157, 0.443137, 0.607843, 1)
-position = Vector2(640, 360)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_sklie")
+[node name="CheckerPattern" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.352941, 0.678431, 1)
+offset_right = 2860.0
+offset_bottom = 1660.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0fcn1")
+stretch_mode = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PB/BGLayer/Magenta"]
-libraries = {
-"": SubResource("AnimationLibrary_o84so")
-}
+[node name="ButtonStuff" type="CanvasLayer" parent="."]
 
-[node name="UILayer" type="ParallaxLayer" parent="PB"]
-motion_scale = Vector2(0, 0)
+[node name="MainSide" type="Sprite2D" parent="ButtonStuff"]
+texture = ExtResource("4_r6ooo")
+centered = false
 
-[node name="Buttons" type="Node2D" parent="PB/UILayer"]
+[node name="Buttons" type="Node2D" parent="ButtonStuff"]
 
-[node name="StoryMode" type="AnimatedSprite2D" parent="PB/UILayer/Buttons"]
-position = Vector2(640, 224)
-sprite_frames = ExtResource("4_vrrvm")
-animation = &"selected"
+[node name="Play" type="AnimatedSprite2D" parent="ButtonStuff/Buttons"]
+position = Vector2(-800, 40)
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("5_q5t4q")
+animation = &"play idle"
+centered = false
 
-[node name="Freeplay" type="AnimatedSprite2D" parent="PB/UILayer/Buttons"]
-position = Vector2(640, 360)
-sprite_frames = ExtResource("5_q251e")
-animation = &"selected"
+[node name="Support" type="AnimatedSprite2D" parent="ButtonStuff/Buttons"]
+position = Vector2(-800, 240)
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("5_q5t4q")
+animation = &"support idle"
+centered = false
 
-[node name="Options" type="AnimatedSprite2D" parent="PB/UILayer/Buttons"]
-position = Vector2(640, 504)
-sprite_frames = ExtResource("6_jtmjb")
-animation = &"idle"
+[node name="Options" type="AnimatedSprite2D" parent="ButtonStuff/Buttons"]
+position = Vector2(-800, 440)
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("5_q5t4q")
+animation = &"options idle"
+centered = false
 
-[node name="ButtonFlashing" type="AnimationPlayer" parent="PB/UILayer"]
-root_node = NodePath("../Buttons")
+[node name="ButtonFlashing" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ButtonStuff/Buttons")
 libraries = {
 "": SubResource("AnimationLibrary_o48h0")
 }
 
-[node name="Version" type="Label" parent="PB/UILayer"]
-offset_left = 9.0
-offset_top = 702.0
-offset_right = 239.0
-offset_bottom = 717.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_constants/line_spacing = 0
-theme_override_fonts/font = ExtResource("7_fi2y3")
-theme_override_font_sizes/font_size = 16
-text = "Nova Engine Godot v1.2.0"
-autowrap_mode = 3
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 359)
+position = Vector2(640, 360)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0

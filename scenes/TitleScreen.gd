@@ -80,7 +80,6 @@ func beat_hit(beat:int):
 			ng_spr.visible = true
 		8:
 			delete_cool_text()
-			ng_spr.visible = false
 		9:
 			create_cool_text([cur_wacky[0]])
 		11:

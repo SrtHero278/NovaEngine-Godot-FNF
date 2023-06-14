@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgvvkjf4412xh"]
+
+[ext_resource type="Script" path="res://scenes/PlayMenu.gd" id="1_3v4nc"]
+[ext_resource type="Texture2D" uid="uid://msski5dfskgk" path="res://assets/images/menus/playmenu/playBG.png" id="2_ph315"]
+[ext_resource type="Texture2D" uid="uid://bp6vjrko5h15c" path="res://assets/images/menus/checker.png" id="3_tw3qr"]
+[ext_resource type="Texture2D" uid="uid://ccfv2rdxwsjcu" path="res://assets/images/menus/playmenu/Play_Bottom.png" id="4_u18sm"]
+[ext_resource type="SpriteFrames" path="res://assets/images/menus/playmenu/PlaySelect_Buttons.res" id="5_84pkl"]
+
+[sub_resource type="Gradient" id="Gradient_d6ckc"]
+offsets = PackedFloat32Array(0, 0.49505, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0.768627, 0.380392, 0.333333, 0.984314, 1, 0.537255, 0.666667)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e6snr"]
+gradient = SubResource("Gradient_d6ckc")
+width = 512
+
+[node name="PlayMenu" type="Node2D"]
+script = ExtResource("1_3v4nc")
+
+[node name="ScrollWorkaround" type="Node2D" parent="."]
+
+[node name="PlayBg" type="Sprite2D" parent="ScrollWorkaround"]
+position = Vector2(640, 300)
+texture = ExtResource("2_ph315")
+
+[node name="Gradient" type="Sprite2D" parent="."]
+position = Vector2(640, 464)
+rotation = 1.5708
+scale = Vector2(1, 1280)
+texture = SubResource("GradientTexture1D_e6snr")
+
+[node name="CheckerPattern" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.811765, 0.352941, 0)
+offset_right = 2860.0
+offset_bottom = 1660.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_tw3qr")
+stretch_mode = 1
+
+[node name="ButtonStuff" type="CanvasLayer" parent="."]
+
+[node name="ScrollWorkaround2" type="Node2D" parent="ButtonStuff"]
+
+[node name="PlayBottom" type="Sprite2D" parent="ButtonStuff/ScrollWorkaround2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 525)
+texture = ExtResource("4_u18sm")
+centered = false
+
+[node name="Buttons" type="Node2D" parent="ButtonStuff"]
+
+[node name="Story" type="AnimatedSprite2D" parent="ButtonStuff/Buttons"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 1280)
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("5_84pkl")
+animation = &"week idle"
+
+[node name="Freeplay" type="AnimatedSprite2D" parent="ButtonStuff/Buttons"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(370, 1280)
+scale = Vector2(0.8, 0.8)
+sprite_frames = ExtResource("5_84pkl")
+animation = &"freeplay idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+rotation = 1.5708
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="Node" type="Node" parent="."]
